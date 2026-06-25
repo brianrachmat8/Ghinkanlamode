@@ -1,0 +1,1 @@
+Versi ini menambahkan preview gambar seperti e-commerce: klik gambar utama untuk membuka preview besar, zoom pakai scroll mouse, dan gambar tampil full memakai object-fit: contain dengan background samar.

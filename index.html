@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghinkan La Mode - Official Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo">
+        <img src="images/logo-ghinkan.png" alt="Ghinkan La Mode" class="nav-logo-image" />
+        <span class="brand-text">Ghinkan <em>La Mode</em></span>
+      </a>
+      <nav class="nav-menu">
+        <a href="#produk">Produk</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#tentang">Tentang</a>
+        <button class="cart-nav-button" id="openCartButton">Keranjang <span id="cartCount">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-label">Official Fashion & Beauty Store</p>
+          <h1>Belanja fashion dan beauty pilihan langsung di Ghinkan La Mode.</h1>
+          <p>Pilih produk, lihat detail warna, masukkan ke keranjang, lalu checkout melalui sistem Ghinkan La Mode.</p>
+          <div class="hero-actions">
+            <a href="#produk" class="primary-button">Belanja Sekarang</a>
+            <button class="secondary-button" id="heroCartButton">Lihat Keranjang</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="brand-showcase">
+            <img src="images/logo-ghinkan.png" alt="Logo Ghinkan La Mode" class="brand-showcase-image" />
+            <p>Feminin • Elegant • Modern</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="store-flow-section">
+      <div class="container store-flow-grid">
+        <div class="flow-card"><span>01</span><h3>Lihat Produk</h3><p>Buka detail produk untuk melihat beberapa pilihan warna/varian.</p></div>
+        <div class="flow-card"><span>02</span><h3>Pilih Warna</h3><p>Pilih warna yang sesuai, seperti Pink Dusty, Cream, Sage Green, Maroon, atau Hitam.</p></div>
+        <div class="flow-card"><span>03</span><h3>Checkout</h3><p>Produk yang masuk keranjang akan menyimpan warna yang dipilih.</p></div>
+      </div>
+    </section>
+
+    <section id="kategori" class="category-section">
+      <div class="container">
+        <div class="section-title center-title"><p>Kategori Produk</p><h2>Pilih sesuai kebutuhanmu</h2></div>
+        <div class="category-buttons">
+          <button class="category-btn active" data-category="Semua">Semua</button>
+          <button class="category-btn" data-category="Pakaian & Fashion">Pakaian & Fashion</button>
+          <button class="category-btn" data-category="Skincare">Skincare</button>
+          <button class="category-btn" data-category="Makeup">Makeup</button>
+          <button class="category-btn" data-category="Aksesori & Tas">Aksesori & Tas</button>
+          <button class="category-btn" data-category="Rambut & Tubuh">Rambut & Tubuh</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="produk" class="product-section">
+      <div class="container">
+        <div class="section-title product-title-row">
+          <div><p>Produk Pilihan</p><h2>Katalog Ghinkan La Mode</h2></div>
+          <input type="text" id="searchInput" class="search-box" placeholder="Cari gamis, serum, tas, parfum..." />
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+        <p id="emptyMessage" class="empty-message">Produk tidak ditemukan. Coba kata kunci atau kategori lain.</p>
+      </div>
+    </section>
+
+    <section class="brand-promise-section">
+      <div class="container brand-promise-grid">
+        <div class="promise-card"><p class="promise-label">Variant Gallery</p><h3>Satu produk bisa punya banyak pilihan warna.</h3><p>Pelanggan bisa melihat tampilan warna terlebih dahulu sebelum memasukkan produk ke keranjang.</p></div>
+        <div class="promise-card"><p class="promise-label">Easy Checkout</p><h3>Keranjang menyimpan warna pilihan pembeli.</h3><p>Pesanan WhatsApp akan mencantumkan nama produk, warna/varian, jumlah, dan total harga.</p></div>
+      </div>
+    </section>
+
+    <section id="tentang" class="about-section">
+      <div class="container about-card">
+        <div><p class="about-label">About The Brand</p><h2>Ghinkan La Mode Official Store</h2></div>
+        <p>Ghinkan La Mode adalah toko online bertema feminin yang menghadirkan produk fashion, skincare, makeup, aksesori, tas, serta perawatan rambut dan tubuh.</p>
+        <p class="disclaimer">Catatan: Versi ini adalah checkout manual berbasis keranjang dan WhatsApp confirmation. Untuk pembayaran otomatis di website, perlu integrasi payment gateway.</p>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-panel">
+      <div class="cart-header">
+        <div><p>Ghinkan La Mode</p><h2>Keranjang Belanja</h2></div>
+        <button class="close-cart" id="closeCartButton">&times;</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div><span>Subtotal</span><strong id="cartSubtotal">Rp0</strong></div>
+        <div><span>Estimasi Ongkir</span><strong id="shippingCost">Rp20.000</strong></div>
+        <div class="total-row"><span>Total</span><strong id="cartTotal">Rp0</strong></div>
+      </div>
+      <button class="checkout-button" id="openCheckoutButton">Checkout Sekarang</button>
+    </div>
+  </aside>
+
+  <section class="product-detail-modal" id="productDetailModal">
+    <div class="product-detail-box">
+      <button class="close-detail" id="closeDetailButton">&times;</button>
+      <div class="product-detail-grid">
+        <div class="detail-gallery">
+          <div class="detail-main-image-wrap" id="detailMainImageWrap"></div>
+          <div class="detail-thumbnails" id="detailThumbnails"></div>
+        </div>
+        <div class="detail-info">
+          <p class="detail-category" id="detailCategory"></p>
+          <h2 id="detailName"></h2>
+          <p class="detail-price" id="detailPrice"></p>
+          <p class="detail-description" id="detailDescription"></p>
+          <div class="variant-section">
+            <h3>Pilih Warna</h3>
+            <div class="variant-options" id="variantOptions"></div>
+            <p class="selected-variant-text">Warna dipilih: <strong id="selectedVariantName">-</strong></p>
+          </div>
+          <div class="quantity-section">
+            <h3>Jumlah</h3>
+            <div class="detail-quantity-control">
+              <button type="button" id="decreaseDetailQty">-</button>
+              <span id="detailQty">1</span>
+              <button type="button" id="increaseDetailQty">+</button>
+            </div>
+          </div>
+          <button class="detail-add-cart-button" id="addDetailToCartButton">Tambah ke Keranjang</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="image-lightbox" id="imageLightbox">
+    <div class="image-lightbox-box">
+      <div class="lightbox-topbar">
+        <div>
+          <p class="lightbox-label">Product Preview</p>
+          <h3 id="lightboxTitle">Preview Produk</h3>
+        </div>
+        <div class="lightbox-controls">
+          <button type="button" id="lightboxZoomOut">−</button>
+          <span id="lightboxZoomLabel">100%</span>
+          <button type="button" id="lightboxZoomIn">+</button>
+          <button type="button" id="lightboxReset">Reset</button>
+          <button type="button" class="close-lightbox" id="closeLightboxButton">&times;</button>
+        </div>
+      </div>
+      <div class="lightbox-stage" id="lightboxStage">
+        <div class="lightbox-figure" id="lightboxFigure"></div>
+      </div>
+      <p class="lightbox-hint">Klik gambar utama untuk membuka preview besar • Gunakan scroll mouse untuk zoom in/out</p>
+    </div>
+  </section>
+
+  <section class="checkout-modal" id="checkoutModal">
+    <div class="checkout-box">
+      <div class="checkout-header">
+        <div><p>Checkout</p><h2>Data Pesanan</h2></div>
+        <button class="close-checkout" id="closeCheckoutButton">&times;</button>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <label>Nama Lengkap<input type="text" id="customerName" placeholder="Masukkan nama pembeli" required /></label>
+        <label>Nomor WhatsApp<input type="tel" id="customerPhone" placeholder="Contoh: 081234567890" required /></label>
+        <label>Alamat Lengkap<textarea id="customerAddress" rows="3" placeholder="Alamat lengkap untuk pengiriman" required></textarea></label>
+        <label>Metode Pembayaran<select id="paymentMethod" required><option value="">Pilih metode pembayaran</option><option value="Transfer Bank">Transfer Bank</option><option value="QRIS Manual">QRIS Manual</option><option value="COD / Bayar di Tempat">COD / Bayar di Tempat</option></select></label>
+        <label>Catatan Pesanan<textarea id="orderNote" rows="2" placeholder="Contoh: warna nude, ukuran L, kirim sore"></textarea></label>
+        <div class="checkout-total-box"><span>Total Pesanan</span><strong id="checkoutTotal">Rp0</strong></div>
+        <button type="submit" class="submit-order-button">Buat Pesanan via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-wrapper">
+      <p>&copy; 2026 Ghinkan La Mode. All rights reserved.</p>
+      <p>Official Store by Ghina dan Kania</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
