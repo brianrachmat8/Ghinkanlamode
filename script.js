@@ -11,7 +11,7 @@
 // Ganti nomor ini dengan nomor WhatsApp admin Ghinkan La Mode.
 // Format: 62 + nomor tanpa angka 0 di depan.
 // Contoh: 081234567890 menjadi 6281234567890
-const ADMIN_WHATSAPP_NUMBER = "6281234567890";
+const ADMIN_WHATSAPP_NUMBER = "6285719566114";
 
 // Ongkir manual. Angka ditulis tanpa Rp dan tanpa titik.
 // Contoh Rp20.000 ditulis 20000.
